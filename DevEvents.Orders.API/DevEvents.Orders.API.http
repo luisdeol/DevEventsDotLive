@@ -1,0 +1,6 @@
+@DevEvents.Orders.API_HostAddress = http://localhost:5047
+
+GET {{DevEvents.Orders.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
