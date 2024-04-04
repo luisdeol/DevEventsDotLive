@@ -1,4 +1,7 @@
 
+using DevEvents.Notifications.API.Services;
+using DevEvents.Notifications.API.Subscribers;
+
 namespace DevEvents.Notifications.API
 {
     public class Program
@@ -8,6 +11,8 @@ namespace DevEvents.Notifications.API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddHostedService<EventOrderCreatedSubscriber>();
+            builder.Services.AddScoped<INotificationService, NotificationService>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
